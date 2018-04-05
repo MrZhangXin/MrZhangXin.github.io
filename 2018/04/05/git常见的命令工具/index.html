@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="张鑫"><link rel="alternative" href="/atom.xml" title="填坑小新" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>git常见的命令工具 - 填坑小新</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0;"><header class="head"><h1 class="head-title u-fl"><a href="/">填坑小新</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">我的标签</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2018-04-05T07:47:15.000Z">April 5, 2018</time><h1 class="post__title"><a href="/2018/04/05/git常见的命令工具/">git常见的命令工具</a></h1><div class="post__main echo"><p>#git的常见命令操作</p>
+<p>删除文件的方法</p>
+<pre><code>git rm 文件名  （多个可以加空格后加上）
+</code></pre><p>恢复最近提交的一个状态</p>
+<pre><code>git checkout HEAD -- 文件名
+</code></pre><p>查看本地提交的架构ID</p>
+<pre><code>git log --oneline
+</code></pre><p>恢复ID提交</p>
+<pre><code>git revent (要恢复的ID)
+</code></pre><p>#控制指针的提交</p>
+<p>恢复到指定的提交文件，其他的暂存，如果提交远程会覆盖</p>
+<pre><code>git reset --soft ID
+</code></pre><p>恢复到你指定的指针，其他的ID也是看的见得</p>
+<pre><code>git reset --hard ID
+</code></pre><p>#控制分支</p>
+<p>控制分支的方法</p>
+<pre><code>git branch &quot;分支的名字&quot;
+</code></pre><p>查看所有的分支</p>
+<pre><code>git branch 
+</code></pre><p>切换分支</p>
+<pre><code>git checkout &quot;分支的名&quot;
+</code></pre><p>查看ID信息与提交的分支</p>
+<pre><code>git log --oneline --decorate
+</code></pre><p>比较两个分支之间的区别</p>
+<pre><code>git diff &quot;分支名&quot;..&quot;分支名&quot;
+</code></pre><p>合并分支，前提要合并的分支都提交完成了</p>
+<pre><code>git merge &quot;要合并的分支名&quot;
+</code></pre><p>合并如果同时修改同一个文件的时候就会出现冲突</p>
+<pre><code>要解决后再合并分支
+</code></pre><p>重命名分支</p>
+<pre><code>git branch -m &quot;分支名&quot; &quot;修改的分支名&quot;
+</code></pre><p>删除分支</p>
+<pre><code>git branch -d &quot;分支名&quot;
+</code></pre><p>#远程的版本库</p>
+<p>创建远程的版本库</p>
+<pre><code>git remote add origin &quot;远程仓库的地址&quot;;
+</code></pre><p>查看远程的仓库地址</p>
+<pre><code>git remote -v
+</code></pre><p>远程推送文件</p>
+<pre><code>git push -u origin &quot;分支名&quot;
+</code></pre><p>同步远程更新的分支获取到本地</p>
+<pre><code>git fetch
+</code></pre><p>远程分支获取状态更新</p>
+<pre><code>git merge origin/&quot;分支名&quot;
+</code></pre><p>#忽略文件的列表</p>
+<pre><code>.gitignore 文件名
+
+//内容
+
+node_module/
+</code></pre></div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/git/">git</a></li></ul></footer></article><div class="comments" id="lv-container" data-id="city" data-uid="your uid"><script>(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; } j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2018 张鑫</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>
